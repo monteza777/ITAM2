@@ -27,6 +27,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('user_actions', 'Admin\UserActionsController');
     Route::resource('servers', 'Admin\ServersController');
     Route::post('servers_mass_destroy', ['uses' => 'Admin\ServersController@massDestroy', 'as' => 'servers.mass_destroy']);
+    Route::get('archives', ['uses' => 'Admin\ServersController@archives', 'as' => 'servers.archives']);
+    Route::get('restore/{id}', ['uses' => 'Admin\ServersController@restore', 'as' => 'servers.restore']);
+    Route::get('servers_ar/{id}', ['uses' => 'Admin\ServersController@viewArchive', 'as' => 'servers.servers_ar']);
+    Route::delete('permanentDelete/{id}', ['uses' => 'Admin\ServersController@permanentDelete', 'as' => 'servers.permanentDelete']);
     Route::resource('server_details', 'Admin\ServerDetailsController');
 
 });

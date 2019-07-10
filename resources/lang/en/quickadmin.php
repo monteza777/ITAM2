@@ -58,6 +58,8 @@ return [
 		'fields' => [
 			'title' => 'Servers',
 			'created_date' => 'Created Date',
+			'product' => 'Product',
+			'organization' => 'Organization',
 			'os_version' => 'OS Version',
 			'brand' => 'Brand',
 			'model' => 'Model',
@@ -68,6 +70,22 @@ return [
 			'ram' => 'RAM',
 			'disk_type' => 'Disk (Type)',
 			'disk_free_pe' => 'Disk (Free PE)',
+		],
+	
+	],
+
+	'data_centers' => [
+		'title' => 'Data Center',
+		'fields' => [
+			'datacenter_link' => 'Data Center Link',
+			'created_date' => 'Created Date',
+			'location' => 'Location',
+			'rack_unit' => 'Rack Unit',
+			'position' => 'Position',
+			'pdu_a_position' => 'PDU A Position',
+			'pdu_b_position' => 'PDU B Position',
+			'cage_key_code' => 'Cage Key Code',
+			'smarthand_request' => 'Smarthand Request',
 		],
 	
 	],
@@ -89,6 +107,8 @@ return [
 	'qa_back_to_list' => 'Back to list',
 	'qa_dashboard' => 'Dashboard',
 	'qa_delete' => 'Delete',
+	'qa_soft_delete' => 'Archive',
+	'qa_soft_deletes' => 'Archives',
 	'qa_delete_selected' => 'Delete selected',
 	'qa_category' => 'Category',
 	'qa_categories' => 'Categories',

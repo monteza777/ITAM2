@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServersTable extends Migration
+class CreateNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateServersTable extends Migration
      */
     public function up()
     {
-        Schema::create('servers', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('server_name');
+            $table->integer('server_id');
+            $table->string('kernel_updates')->nullable();
+            $table->string('inc_rfc_api_to_jira')->nullable();
+            $table->string('runbooks')->nullable();
             $table->timestamps();
-            $table->SoftDeletes();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateServersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servers');
+        Schema::dropIfExists('notifications');
     }
 }

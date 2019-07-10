@@ -16,6 +16,8 @@ class CreateServerDetailsTable extends Migration
         Schema::create('server_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('server_id');
+            $table->string('product')->nullable();
+            $table->string('organization')->nullable();
             $table->string('os_version')->nullable();
             $table->string('brand')->nullable();
             $table->string('model')->nullable();
@@ -27,6 +29,7 @@ class CreateServerDetailsTable extends Migration
             $table->string('disks_type')->nullable();
             $table->string('disks_free_pe')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

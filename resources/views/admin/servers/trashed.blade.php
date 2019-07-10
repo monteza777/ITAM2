@@ -3,14 +3,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.servers.title')</h3>
-
-    @can('user_create')
-    <p>
-        <a href="{{ route('admin.servers.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
-        
-    </p>
-    @endcan
-
+    
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('quickadmin.qa_list')
@@ -34,31 +27,29 @@
                     @if (count($servers) > 0)
                         @foreach ($servers as $server)
                             @foreach($server->server_details as $detail)
-                                @foreach($server->data_center as $dcenter)
                             <tr data-entry-id="{{ $server->id }}">
                                 @can('user_delete')
                                     <td></td>
                                 @endcan
                                 <!-- <td field-key='name'>{{ $server->server_name }}</td> -->
                                 <td>
-                                    <button class="btn btn-sm btn-success" onsubmit="return checkBlank()"
+                                    <button class="btn btn-sm btn-success" 
                                        type="button" 
                                        class="btn btn-primary btn-lg" 
                                        data-toggle="modal"
                                        data-id="{{$server->id}}"
                                        data-title="{{$server->server_name}}"
-                                       data-product="{{$detail->product}}"
-                                       data-organization="{{$detail->organization}}"
                                        data-os_version="{{$detail->os_version}}"
                                        data-brand="{{$detail->brand}}"
                                        data-model="{{$detail->model}}"
                                        data-asset_tag="{{$detail->asset_tag}}"
                                        data-license="{{$detail->license}}"
-                                       data-serial="{{$detail->serial}}"
+                                       data-seria-="{{$detail->serial}}"
                                        data-cpu="{{$detail->cpu}}"
                                        data-ram="{{$detail->ram}}"
                                        data-disks_type="{{$detail->disks_type}}"
                                        data-disks_freepe="{{$detail->disks_free_pe}}"
+                                       
                                        data-target="#favoritesModal">
                                       {{$server->server_name}}
                                        </button>
@@ -85,7 +76,6 @@
                                 </td>
 
                             </tr>
-                                @endforeach
                             @endforeach
                         @endforeach
                     @else
@@ -107,8 +97,6 @@
             $('#favoritesModal').on("show.bs.modal", function (e) {
                  $("#favoritesModalLabel").html($(e.relatedTarget).data('title'));
                  $("#fav-title").html($(e.relatedTarget).data('title'));
-                 $("#product").html($(e.relatedTarget).data('product'));
-                 $("#organization").html($(e.relatedTarget).data('organization'));
                  $("#os-version").html($(e.relatedTarget).data('os_version'));
                  $("#brand").html($(e.relatedTarget).data('brand'));
                  $("#model").html($(e.relatedTarget).data('model'));
@@ -119,25 +107,9 @@
                  $("#ram").html($(e.relatedTarget).data('ram'));
                  $("#disks-type").html($(e.relatedTarget).data('disks_type'));
                  $("#disks-freepe").html($(e.relatedTarget).data('disks_freepe'));
-                 // Data Center
-                 $("#datacenter_link").html($(e.relatedTarget).data('datacenter_link'));
-                 $("#location").html($(e.relatedTarget).data('location'));
-                 $("#rack_unit").html($(e.relatedTarget).data('rack_unit'));
-                 $("#position").html($(e.relatedTarget).data('position'));
-                 $("#pdu_a_position").html($(e.relatedTarget).data('pdu_a_position'));
-                 $("#pdu_b_position").html($(e.relatedTarget).data('pdu_b_position'));
-                 $("#cage_key_code").html($(e.relatedTarget).data('cage_key_code'));
-                 $("#smarthand_request").html($(e.relatedTarget).data('smarthand_request'));
+                 // $("#email-id").html($(e.relatedTarget).data('resend-id'));
             });
         });
-    </script>
-    <script>
-        function checkBlank(){
-            if(document.getElementById('serial').value == ""){
-                console.log('serials is empty');
-                return false;
-            }
-        }
     </script>
 @endsection
 

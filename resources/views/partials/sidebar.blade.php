@@ -80,13 +80,28 @@
                     
                 </ul>
             </li>@endcan
+
+            @can('user_management_access')
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                    <span>@lang('quickadmin.qa_soft_deletes')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @can('user_action_access')
+                    <li>
+                        <a href="{{ route('admin.servers.archives') }}">
+                            <i class="fa fa-th-list"></i>
+                            <span>@lang('quickadmin.servers.title')</span>
+                        </a>
+                    </li>@endcan
+                    
+                </ul>
+            </li>@endcan
             
-
-            
-
-            
-
-
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">

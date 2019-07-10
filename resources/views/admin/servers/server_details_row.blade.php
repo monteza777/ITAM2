@@ -1,6 +1,6 @@
 <tr data-index="{{ $index }}">
     <td>
-    	{!! Form::text('server_details['.$index.'][os_version]', old('server_details['.$index.'][os_version]', isset($field) ? $field->os_version: ''), ['class' => 'form-control']) !!}
+    	{!! Form::text('server_details['.$index.'][os_version]', old('server_details['.$index.'][os_version]', isset($field) ? $field->os_version: ''), ['class' => 'form-control','required'=>'rquired']) !!}
     </td>
     <td>
     	{!! Form::text('server_details['.$index.'][brand]', old('server_details['.$index.'][brand]', isset($field) ? $field->brand: ''), ['class' => 'form-control']) !!}

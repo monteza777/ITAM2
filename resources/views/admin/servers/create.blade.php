@@ -26,36 +26,10 @@
         </div>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading">
-            Categories
-        </div>
-        <div class="panel-body">
-            <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>@lang('quickadmin.server_details.fields.os_version')</th>
-                    <th>@lang('quickadmin.server_details.fields.brand')</th>
-                    <th>@lang('quickadmin.server_details.fields.model')</th>
-                    <th>@lang('quickadmin.server_details.fields.asset_tag')</th>
-                    <th>@lang('quickadmin.server_details.fields.license')</th>
-                    <th>@lang('quickadmin.server_details.fields.serial')</th>
-                    <th>@lang('quickadmin.server_details.fields.cpu')</th>
-                    <th>@lang('quickadmin.server_details.fields.ram')</th>
-                    <th>@lang('quickadmin.server_details.fields.disk_type')</th>
-                    <th>@lang('quickadmin.server_details.fields.disk_free_pe')</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody id="users">
-                    @foreach(old('server_details', []) as $index => $data)
-                        @include('admin.servers.server_details_row', [
-                            'index' => $index
-                        ])
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success pull-right add-new">@lang('quickadmin.qa_add_new')</a>
-        </div>
+        @include('admin.servers.categories')
+    </div>
+    <div class="panel panel-default">
+        @include('admin.servers.data_center')
     </div>
 
     {!! Form::submit(trans('quickadmin.qa_save'), ['class' => 'btn btn-danger']) !!}
