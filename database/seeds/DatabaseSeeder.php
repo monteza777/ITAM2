@@ -14,6 +14,11 @@ class DatabaseSeeder extends Seeder
         
         $this->call(RoleSeed::class);
         $this->call(UserSeed::class);
+        $this->call(ServerSeed::class);
+        $this->call(ServerDetailSeed::class);
+        $this->call(DataCenterSeed::class);
+        $this->call(NetworkManagementSeed::class);
+        $this->call(PlatformSeed::class);
 
     }
 }

@@ -20,6 +20,7 @@ class CreatePlatformsTable extends Migration
             $table->string('sftp_directories')->nullable();
             $table->string('sftp_client_pass')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

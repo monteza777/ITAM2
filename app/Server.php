@@ -16,14 +16,22 @@ class Server extends Model
       parent::boot();
 
       static::deleting(function($servers) {
-         foreach ($servers->server_details()->get() as $details) {
-            $details->delete();
-         }
+         $servers->server_details->delete();
+         $servers->data_center->delete();
+         $servers->network_management->delete();
+         $servers->platform->delete();
       });
+
+      static::restoring(function ($servers) {
+             $servers->server_details->restore();
+             $servers->data_center->restore();
+             $servers->network_management->restore();
+             $servers->platform->restore();
+        });
     }
 
     public function server_details(){
-    	return $this->hasMany(ServerDetails::class);
+    	return $this->hasOne(ServerDetails::class);
     }
 
     public function data_center(){

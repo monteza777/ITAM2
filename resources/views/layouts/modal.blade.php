@@ -19,9 +19,10 @@
               <div class="panel with-nav-tabs panel-success">
                   <div class="panel-heading">
                           <ul class="nav nav-tabs">
-                              <li class="active"><a href="#tab1info" data-toggle="tab">Details</a></li>
-                              <li><a href="#tab2info" data-toggle="tab">Info 2</a></li>
-                              <li><a href="#tab3info" data-toggle="tab">Info 3</a></li>
+                              <li class="active"><a href="#tab1info" data-toggle="tab">Categories</a></li>
+                              <li><a href="#tab2info" data-toggle="tab">Data Center</a></li>
+                              <li><a href="#tab3info" data-toggle="tab">Network Management</a></li>
+                              <li><a href="#tab4info" data-toggle="tab">Platform</a></li>
                           </ul>
                   </div>
                   <div class="panel-body">
@@ -58,6 +59,7 @@
                               </div>
                           </div>
                           <div class="tab-pane fade" id="tab2info">
+                            <div class="col-sm-3 ">
                             <div>
                                 <h5><strong>@lang('quickadmin.data_centers.fields.datacenter_link'):</strong></h5>
                                 <h5><strong>@lang('quickadmin.data_centers.fields.location'):</strong></h5>
@@ -68,9 +70,9 @@
                                 <h5><strong>@lang('quickadmin.data_centers.fields.cage_key_code'):</strong></h5>
                                 <h5><strong>@lang('quickadmin.data_centers.fields.smarthand_request'):</strong></h5>
                               </div>
-
+                            </div>
                               <div class="col-sm-9 other">
-                                <h5 ><span id="datacenter_link"></span></h5>
+                                <h5 ><span id="datacenter_link"></span></a></h5>
                                 <h5 ><span id="location"></span></h5>
                                 <h5 ><span id="rack_unit"></span></h5>
                                 <h5><span id="position"></span></h5>
@@ -80,7 +82,42 @@
                                 <h5><span id="smarthand_request"></span></h5>
                               </div>
                           </div>
-                          <div class="tab-pane fade" id="tab3info">Info 3</div>
+                          <div class="tab-pane fade" id="tab3info">
+                            <div class="col-sm-5 ">
+                              <div>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.ip_address'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.remote_console_ip'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.dns'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.interfaces'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.eth0'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.eth1'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.network_managements.fields.mounted_vips'):</strong></h5>
+                              </div>
+                            </div>
+                            <div class="col-sm-7 other">
+                              <h5 ><span id="ip_address"></h5>
+                              <h5 ><span id="remote_console_ip"></h5>
+                              <h5><span id="dns"></span></h5>
+                              <h5><span id="interfaces"></span></h5>
+                              <h5><span id="eth0"></span></h5>
+                              <h5><span id="eth1"></span></h5>
+                              <h5><span id="mounted_vips"></span></h5>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="tab4info">
+                            <div class="col-sm-5 ">
+                              <div>
+                                <h5><strong>@lang('quickadmin.platforms.fields.mounted_platforms'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.platforms.fields.sftp_directories'):</strong></h5>
+                                <h5><strong>@lang('quickadmin.platforms.fields.sftp_client_pass'):</strong></h5>
+                              </div>
+                            </div>
+                            <div class="col-sm-7 other">
+                              <h5 ><span id="mounted_platforms"></h5>
+                              <h5 ><span id="sftp_directories"></h5>
+                              <h5><span id="sftp_client_pass"></span></h5>
+                            </div>
+                          </div>
                       </div>
                   </div>
               </div>

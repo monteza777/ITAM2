@@ -20,6 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->string('inc_rfc_api_to_jira')->nullable();
             $table->string('runbooks')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

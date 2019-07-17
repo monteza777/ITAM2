@@ -80,7 +80,6 @@
                     
                 </ul>
             </li>@endcan
-
             @can('user_management_access')
             <li class="treeview">
                 <a href="#">
@@ -91,16 +90,18 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    
                     @can('user_action_access')
                     <li>
                         <a href="{{ route('admin.servers.archives') }}">
-                            <i class="fa fa-th-list"></i>
+                            <i class="fa fa-server"></i>
                             <span>@lang('quickadmin.servers.title')</span>
                         </a>
-                    </li>@endcan
-                    
+                    </li>
+                    @endcan
                 </ul>
             </li>@endcan
+
             
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">

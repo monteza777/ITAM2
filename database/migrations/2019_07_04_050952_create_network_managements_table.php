@@ -24,6 +24,7 @@ class CreateNetworkManagementsTable extends Migration
             $table->string('eth1')->nullable();
             $table->string('mounted_vips')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

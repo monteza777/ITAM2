@@ -25,6 +25,7 @@ class CreateDataCentersTable extends Migration
             $table->string('cage_key_code')->nullable();
             $table->string('smarthand_request')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

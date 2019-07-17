@@ -11,28 +11,17 @@ use App\Http\Requests\Admin\UpdateRolesRequest;
 
 class RolesController extends Controller
 {
-    /**
-     * Display a listing of Role.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         if (! Gate::allows('role_access')) {
             return abort(401);
         }
-
-
-                $roles = Role::all();
+            $roles = Role::all();
 
         return view('admin.roles.index', compact('roles'));
     }
 
-    /**
-     * Show the form for creating new Role.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         if (! Gate::allows('role_create')) {
@@ -41,12 +30,7 @@ class RolesController extends Controller
         return view('admin.roles.create');
     }
 
-    /**
-     * Store a newly created Role in storage.
-     *
-     * @param  \App\Http\Requests\StoreRolesRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreRolesRequest $request)
     {
         if (! Gate::allows('role_create')) {
@@ -62,13 +46,6 @@ class RolesController extends Controller
         return redirect()->route('admin.roles.index');
     }
 
-
-    /**
-     * Show the form for editing Role.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         if (! Gate::allows('role_edit')) {
@@ -79,13 +56,6 @@ class RolesController extends Controller
         return view('admin.roles.edit', compact('role'));
     }
 
-    /**
-     * Update Role in storage.
-     *
-     * @param  \App\Http\Requests\UpdateRolesRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateRolesRequest $request, $id)
     {
         if (! Gate::allows('role_edit')) {

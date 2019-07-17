@@ -89,6 +89,29 @@ return [
 		],
 	
 	],
+	'network_managements' => [
+		'title' => 'Network Management',
+		'fields' => [
+			'ip_address' => 'IP Address',
+			'created_date' => 'Created Date',
+			'remote_console_ip' => 'Remote Console IP',
+			'dns' => 'DNS',
+			'interfaces' => 'Interfaces',
+			'eth0' => 'eth0 (Switch Name and Port Position)',
+			'eth1' => 'eth1 (Switch Name and Port Position)',
+			'mounted_vips' => 'Mounted VIPS',
+		],
+	
+	],
+	'platforms' => [
+		'title' => 'Platforms',
+		'fields' => [
+			'created_date' => 'Created Date',
+			'mounted_platforms' => 'Mounted Platforms',
+			'sftp_directories' => 'SFTP Directories',
+			'sftp_client_pass' => 'SFTP Client Pass',
+		],
+	],
 	'qa_create' => 'Create',
 	'qa_save' => 'Save',
 	'qa_edit' => 'Edit',
